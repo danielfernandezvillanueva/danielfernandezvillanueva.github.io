@@ -1,0 +1,518 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --black-color: #151515;
+    --maroon-color: #A91D3A;
+    --red-color: #C73659;
+    --grey-color: #EEEEEE;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;  /*esto sirve para que de forma horitzontal no se desborde contenido de un elemento cuando ocupa mas que este elemento*/
+}
+
+body {
+    background-color: var(--black-color);
+    font-family: 'Poppins', sans-serif;
+    color: var(--grey-color);
+}
+
+
+/*webkit con sus formas es una pseudoclase que se usa para personalizar la apariencia de la barra*/
+html::-webkit-scrollbar {
+    width: 0.8rem;  /*ancho*/
+} 
+
+html::-webkit-scrollbar-track {
+    background: var(--black-color);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--red-color);
+} 
+
+/*HEADER*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem;
+    background: rgba(0, 0, 0, 0.7);
+    filter: drop-shadow(10px); /*efecto de sombra paralela, esta en el exterior de los bordes del elemeneto y puede dar profundidad y realismo*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--red-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.navBar a {
+    font-size: 1.8rem;
+    color: var(--grey-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.navBar a:hover,
+.navBar a.active {
+    color: var(--red-color);
+    border-bottom: 3px solid var(--red-color);
+}
+
+#menuIcon {
+    font-size: 3.6rem;
+    color: var(--red-color);
+    display: none;
+}
+
+
+
+@media (max-width:995px) {
+    #menuIcon {
+        display: block;
+    }
+    .navBar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid var(--red-color);
+        border-bottom: 3px solid var(--red-color);
+        border-bottom-left-radius: 2rem;
+        padding: 3rem 3%;
+        background-color: var(--maroon-color);
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+        display: none;
+    } 
+    .navBar .active {
+        color: var(--red-color);
+    }
+    .navBar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+    .navBar a:hover,
+    .navBar a.active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid var(--red-color);
+    }
+}
+
+
+/*HOME*/
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+    margin-top: 50px;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background: var(--black-color);
+}
+
+.home .homeContent {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span {
+    color: var(--red-color);
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.homeContent h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+.homeImg {
+    border-radius: 50%;
+}
+
+.homeImg img {
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--red-color);
+    cursor: pointer;
+}
+
+.homeImg img:hover {
+    transform: scale(1.01);
+    filter: drop-shadow(0 0 25px  var(--red-color));
+}
+
+.homeContent p {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--black-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: var(--red-color);
+    border: 2px solid var(--red-color);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.btn:hover {
+    transform: scale(1.03);
+    background-color: var(--red-color);
+    color: white;
+    box-shadow: 0 0 25px var(--red-color);
+}
+
+.text {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.text span {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.text span::before {
+    content: 'seguridad informática';
+    color: var(--red-color);
+    animation: words 12s steps(1) infinite;
+}
+
+@keyframes words {
+    0%, 19.9% {
+        content: 'servicios en red';
+    }
+    20%, 39.9% {
+        content: 'sistemas operativos';
+    }
+    40%, 59.9% {
+        content: 'aplicaciones web';
+    }
+    60%, 100% {
+        content: 'seguridad informática';
+    }
+}
+
+@media (max-width:1000px) {
+    .home {
+        gap: 4rem;
+    }
+}
+
+@media (max-width:995px) {
+    .home {
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .homeContent h3 {
+        font-size: 2.5rem;
+    }
+
+    .homeContent h1 {
+        font-size: 5rem;
+    }
+
+    .homeImg img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+
+/*SKILLS*/
+.skills {
+    background: var(--maroon-color);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+    margin-top: 0px;
+}
+
+.caja {
+    background-color: var(--red-color);
+    height: 260px;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: var(--grey-color);
+    box-shadow: 0 0 10px rgba(255, 0, 153, 0.756);
+}
+
+.caja:hover {
+    background: var(--grey-color);
+    color: var(--red-color);
+    transform: scale(1.03);
+    border: 2px solid var(--red-color);
+}
+
+.caja .info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    max-height: 200px;
+    justify-content: center;
+    align-items: baseline;
+    padding: 5rem;
+}
+
+.info h4 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.info p {
+    font-size: 1.6rem;
+    font-weight: 400;
+    max-height: 100px;
+    margin: auto;
+}
+
+@media (max-width:991px) {
+    section {
+        padding: 10rem 3% 2rem;
+    }
+
+    .skills {
+        padding-bottom: 7rem;
+
+    }
+    
+}
+
+@media (max-width:895px) {
+
+    .container {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .caja {
+        max-height: 140px;
+    }
+    .info {
+        margin-top: -25px;
+    }
+}
+
+
+/*REDES*/
+
+.redes .iconRedes {
+    text-align: center;
+}
+
+.iconRedes a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 12rem;
+    height: 12rem;
+    background: transparent;
+    border: 0.2rem solid var(--red-color);
+    font-size: 1.7rem;
+    border-radius: 50%;
+    color: var(--red-color);
+    margin: 2rem 3.8rem 3rem 3.8rem;
+    transition: 0.3s ease;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.iconRedes a:hover {
+    color: white;
+    transform: scale(1.03)translateY(-5px);
+    background: var(--red-color);
+    box-shadow: 0 0 25px var(--red-color);
+}
+
+.iconRedes i {
+    padding: 4px;
+}
+
+
+/*REDES-CONTACTO*/
+.contacto h2 {
+    margin-bottom: 3rem;
+    color: var(--grey-color);
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.contacto form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.contacto form .inputBox {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contacto form .inputBox input,
+.contacto form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--grey-color);
+    background: var(--black-color);
+    border-radius: 0.8rem;
+    border: 2px solid var(--red-color);
+    margin: 1rem 0;
+    resize: none;
+}
+
+.contacto form .btn {
+    margin-top: 2rem;
+}
+
+.message {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.success {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+.error {
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+/*FOOTER*/
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: var(--red-color);
+}
+
+.footer .social {
+    text-align: center;
+    padding-bottom: 25px;
+    color: var(--black-color);
+}
+
+.footer .social a {
+    font-size: 25px;
+    color: var(--black-color);
+    border: 2px solid black;
+    width: 42px;
+    height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease;
+}
+
+.footer .social a i {
+    margin-top: 7px;
+}
+
+.footer .social a:hover {
+    transform: scale(1.2)translateY(-5px);
+    background: var(--black-color);
+    color: var(--red-color);
+}
+
+.footer ul {
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.footer ul li a {
+    color: var(--black-color);
+    border-bottom: 3px solid transparent;
+    transition: 0.3 ease;
+}
+
+.footer ul li a:hover {
+    border-bottom: 3px solid black;
+}
+
+
+.footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+footer .copyright {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 16px;
+    color: black;
+}
+
+@media (max-width:1285px) {
+    html {
+        font-size: 55%;
+    }
+
+}
+
+@media (max-width:991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+
+    .footer {
+        padding: 2rem 3%;
+    }
+}
