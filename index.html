@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Fernández</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="./style.css">
+    <!--Letra-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+                emailjs.init('JA3JvNtN-kFBTGkdI'); // Reemplaza 'YOUR_USER_ID' con tu ID de usuario de EmailJS
+            })();
+        </script>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">blxxdy</a>
+        <nav class="navBar">
+            <a href="#home" class="navLink">Home</a>
+            <a href="#skills" class="navLink">Skills</a>
+            <a href="#redes" class="navLink">Redes y contacto</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="homeImg">
+            <img src="./1718045949934.jpg  " alt="">
+        </div>
+        <div class="homeContent">
+            <h1>Hola, me llamo <span>Daniel</span></h1>
+            <h3 class="text"> <span></span></h3>
+            <p> Soy un estudiante de informática de 22 años, solo me quedan las prácticas para terminar el ciclo,  mi objetivo es poder
+                trabajar en el campo de la ciberseguridad, debido a que es mi pasión, combinando mis conocimientos
+                adquiridos en mis estudios, los adquiridos por cuenta propia junto con la experiencia que ofrece el
+                mercado laboral, para así poder proteger los sistemas y datos en un mundo cada vez más digital.</p>
+
+
+            <a href="#contacto" class="btn">Contrátame</a>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+
+        <div class="container">
+            <div class="caja">
+                <div class="info">
+                    <h4>Sistemas operativos</h4>
+                    <p>Conocimientos en sistemas operativos monousuario: windows y linux; sistemas en red: windows
+                        server, linux server.</p>
+                </div>
+            </div>
+            <div class="caja">
+                <div class="info">
+                    <h4>Servicios en red</h4>
+                    <p>Conocimiento en servicios como son: DNS, SSH, Apache, DHCP, servidores de correo, telnet...</p>
+                </div>
+            </div>
+
+            <div class="caja">
+                <div class="info">
+                    <h4>Seguridad informática</h4>
+                    <p>Protección se las infraestructuras informáticas así como salvaguardar los datos de las empresas,
+                        tanto a nivel físico como lógico</p>
+                </div>
+            </div>
+
+            <div class="caja">
+                <div class="info">
+                    <h4>Aplicaciones web</h4>
+                    <p>Diseño web básico (html,css y JS), ademas del despliegue de aplicaciones web con docker</p>
+                </div>
+            </div>
+
+            <div class="caja">
+                <div class="info">
+                    <h4>Montage y mantenimiento de equipos</h4>
+                    <p>Montaje y mantenimiento a nivel lógico y fisico, orientado a equipos de oficina e individuales
+                    </p>
+                </div>
+            </div>
+
+            <div class="caja">
+                <div class="info">
+                    <h4>Técnicas de pentesting</h4>
+                    <p>Busqueda y explotación de vulnerabilidades, obtención de información. Uso de herramientas de
+                        ciberseguridad.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="redes" id="redes">
+        <div class="iconRedes">
+            <a href="https://github.com/blxxdyclxck"><i class="fa-brands fa-github"></i>Github</a>
+            <a href="https://danifernandezsmra.wordpress.com/"><i class="fa-brands fa-wordpress-simple"></i>Wordpress</a>
+            <a href="https://app.hackthebox.com/profile/overview"><i class="fa-solid fa-lock"></i>HTB</a>
+            <a href="https://www.linkedin.com/in/daniel-fern%C3%A1ndez-villanueva-6a2615312/"><i class="fa-brands fa-linkedin"></i>Linkedin</a>
+            <a href="tel:+34698128484"><i class="fa-brands fa-whatsapp"></i>Teléfono</a>
+            <a href="https://danifernandezsmra.wordpress.com/"><i class="fa-brands fa-google-drive"></i>Curriculum</a>
+        </div>
+
+        <section class="contacto" id="contacto">
+            <h2>Contacta conmigo</h2>
+            <form id="contact-form">
+                <div class="inputBox">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="number" name="telefono" placeholder="Número de telefono">
+                    <input type="text" name="asunto" placeholder="Asunto">
+                </div>
+                <textarea name="mensaje" cols="30" rows="6" placeholder="Mensaje"></textarea>
+                <input type="submit" value="Enviar mensaje" class="btn">
+            </form>
+            <div id="message-container">
+                <div id="success-message" class="message success">Correo enviado exitosamente.</div>
+                <div id="error-message" class="message error">Error al enviar el correo. Por favor, inténtelo de nuevo.</div>
+            </div>  
+        </section>
+    </section>
+
+    <footer class="footer">
+        <div class="social">
+            <a href="tel:+34698128484"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://x.com/blxxdyclxckk"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <p class="copyright">
+            <i class="fa-regular fa-copyright"></i> Daniel Fernández All Right Reserved
+        </p>
+    </footer>
+
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.navLink');
+
+            function changeActiveLink() {
+                let index = sections.length;
+
+                while (--index && window.scrollY + 50 < sections[index].offsetTop) { }
+
+                navLinks.forEach((link) => link.classList.remove('active'));
+                navLinks[index].classList.add('active');
+            }
+
+            changeActiveLink();
+            window.addEventListener('scroll', changeActiveLink);
+        });
+
+
+
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault(); 
+
+            
+            const serviceID = 'service_3ok2yck';
+            const templateID = 'template_pka2gl5'; 
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(function() {
+                    document.getElementById('success-message').style.display = 'block';
+                    document.getElementById('error-message').style.display = 'none';
+                    document.getElementById('contact-form').reset();
+                    setTimeout(function() {
+                        document.getElementById('success-message').style.display = 'none';
+                    }, 3000); 
+                    document.getElementById('contact-form').reset();
+                }, function(error) {
+                    document.getElementById('success-message').style.display = 'none';
+                    document.getElementById('error-message').style.display = 'block';
+                    setTimeout(function() {
+                        document.getElementById('success-message').style.display = 'none';
+                    }, 3000); 
+                    document.getElementById('contact-form').reset();
+                });
+        });
+    </script>
+</body>
+
+</html>
