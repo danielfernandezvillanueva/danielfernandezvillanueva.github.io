@@ -1,1 +1,1 @@
-esto va ser mi portafolio.
+Esto es mi portafolio.
